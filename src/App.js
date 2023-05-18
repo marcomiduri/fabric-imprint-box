@@ -10,6 +10,7 @@ const convertToInches = (num, dpi) => `${(num / dpi).toFixed(2)} inches`
 
 function App() {
   const [dpi, setDpi] = useState(DEFAULT_DPI)
+  const [scale, setScale] = useState(DEFAULT_SCALE_FACTOR)
   const [width, setWidth] = useState(0)
   const [height, setHeight] = useState(0)
   const [imageBlob, setImageBlob] = useState('')
@@ -98,6 +99,10 @@ function App() {
         <div className='form-group'>
           <label htmlFor="dpi">DPI (Dots per Inch)</label>
           <input id="dpi" type="number" value={dpi} onChange={(e) => setDpi(e.target.value)} />
+        </div>
+        <div className='form-group'>
+          <label htmlFor="scale">Scale</label>
+          <input id="scale" type="number" value={scale} onChange={(e) => setScale(e.target.value)} disabled={!imageBlob}/>
         </div>
         <div className='form-group'>
           <label htmlFor="width">Width (Inch)</label>
