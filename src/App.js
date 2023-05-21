@@ -65,12 +65,12 @@ function App() {
   const drawRectangle = () => {
     if (editor && width > 0 && height > 0) {
       const rect = new fabric.Rect({
-        left: (selectedImageWidth / 2) - (width * dpi * DEFAULT_SCALE_FACTOR / 2),
-        top: (selectedImageHeight / 2) - (height * dpi * DEFAULT_SCALE_FACTOR / 2),
+        left: (selectedImageWidth / 2) - (width * dpi * scale / 2),
+        top: (selectedImageHeight / 2) - (height * dpi * scale / 2),
         originX: 'left',
         originY: 'top',
-        width: width * dpi * DEFAULT_SCALE_FACTOR,
-        height: height * dpi * DEFAULT_SCALE_FACTOR,
+        width: width * dpi * scale,
+        height: height * dpi * scale,
         hasBorders: true,
         borderColor: '#ff0000',
         borderScaleFactor: 2,
